@@ -1,0 +1,26 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+    <AssemblyName>behaviac</AssemblyName>
+    <RootNamespace>behaviac</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DefineConstants>TRACE;DEBUG;BEHAVIAC_NOT_USE_UNITY;NETCOREAPP2_0</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DefineConstants>TRACE;BEHAVIAC_NOT_USE_UNITY;BEHAVIAC_RELEASE;</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="exported\MasterAgent.xml" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AlphaBattle_Common\AlphaBattle_Common.csproj" />
+    <ProjectReference Include="..\AlphaBattle_InternalApi\AlphaBattle_InternalApi.csproj" />
+  </ItemGroup>
+
+</Project>
